@@ -18,21 +18,27 @@ var hundred=document.getElementById("d100");
 var modifier=document.getElementById("modifier");
 var advantage=document.getElementById("advantage");
 
-go.addEventListener("click", roll);
+go.addEventListener("click", onClick);
+
+function onClick(){
+	console.log("click has occurred");
+	alert(roll());
+}
 
 function roll(){
-	if (advantage == "none"){
+	console.log(advantage.value);
+	if (advantage.value == "none"){
 		return rollAllDice();
 	}
 
-	else if (advantage == "advantage"){
+	else if (advantage.value == "advantage"){
 		var i = rollAllDice();
 		var j = rollAllDice();
 		if (i>j) return i;
 		else return j;
 	}
 
-	else if (advantage == "disadvantage"){
+	else if (advantage.value == "disadvantage"){
 		var i = rollAllDice();
 		var j = rollAllDice();
 		if (i<j) return i;
@@ -54,7 +60,7 @@ function rollAllDice(){
 
 	var mod = parseFloat(modifier.value) || 0;
 
-	var a = rollDice(, 2);
+	var a = rollDice(d2, 2);
 	var b = rollDice(d4, 4);
 	var c = rollDice(d6, 6);
 	var d = rollDice(d8, 8);
