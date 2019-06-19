@@ -32,6 +32,7 @@ nav {
 nav .btn {
 	background-color: #222222;
 	color: #ffffff;
+	padding: 5px;
 }
 
 nav .btn:hover {
